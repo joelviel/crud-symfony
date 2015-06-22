@@ -1,0 +1,13 @@
+#mysql://b962cb19b0c73c:0d39282e@us-cdbr-iron-east-02.cleardb.net/heroku_3aca274453b4fb9?reconnect=true
+#mysql://user:pass@us-cdbr-east.cleardb.com/TABLE
+parameters:
+    database_host: us-cdbr-iron-east-02.cleardb.net
+    database_port: ~
+    database_name: heroku_3aca274453b4fb9
+    database_user: b962cb19b0c73c
+    database_password: 0d39282e
+    mailer_transport: smtp
+    mailer_host: null
+    mailer_user: null
+    mailer_password: null
+    secret: $3cr3t

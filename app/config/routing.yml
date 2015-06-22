@@ -1,0 +1,8 @@
+app_stock_api:
+    resource: "@AppBundle/Controller/StockRESTController.php"
+    type:   rest
+    prefix:   /api
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

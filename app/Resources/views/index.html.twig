@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="stockModule" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="CRUD a Symfony RESTful API with AngularJS">
+        <meta name="author" content="Joel Viellepeau">
+        <title>CRUD RESTful API</title>
+        <link rel="icon" href="favicon.ico" sizes="32x32">
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.14/toaster.min.css"  />
+        <link rel="stylesheet" href="/assets/css/style.css"/>
+    </head>
+
+    <body class="container" ng-cloak>
+
+        <!-- NAVBAR -->
+        <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top" ng-controller="navbarController">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" data-target="#navbar" data-toggle="collapse" class="navbar-toggle" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#/items" class="navbar-brand">Demo OnlinePajak</a>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{ active: isActive('items')}">
+                            <a href="#/items">CRUD Stock</a>
+                        </li>
+                        <li ng-class="{ active: isActive('tax')}">
+                            <a href="#/taxCalculator">Tax Calculator</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- MAIN VIEW -->
+        <div ui-view="main"></div>
+        
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.2.15/angular-locale_id.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js"></script>
+        <script src="/assets/libs/angular-input-masks-standalone.min.js"></script>
+        <script src="/app/app.min.js"></script>
+        <!-- DEV
+        <script src="/app/app.module.js"></script>
+        <script src="/app/app.route.js"></script>
+        <script src="/app/shared/notifications/notificationsFactory.js"></script>
+        <script src="/app/shared/modalWindow/modalWindowFactory.js"></script>
+        <script src="/app/shared/reactive/reactiveFactory.js"></script>
+        <script src="/app/components/grid/data/dataController.js"></script>
+        <script src="/app/components/grid/data/dataFactory.js"></script>
+        <script src="/app/components/grid/crud/crudController.js"></script>
+        <script src="/app/components/grid/crud/crudFactory.js"></script>
+        <script src="/app/components/grid/crud/crudDirective.js"></script>
+        <script src="/app/components/grid/crud/editor/editorController.js"></script>
+        <script src="/app/components/grid/crud/editor/editorDirective.js"></script>
+        <script src="/app/components/tax/taxController.js"></script>-->
+    </body>
+</html>

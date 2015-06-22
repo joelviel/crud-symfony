@@ -1,0 +1,37 @@
+<div>
+
+    <h1>
+        $ Tax Calculator 
+        <a href="https://github.com/viellepeau/crud-symfony/blob/master/web/app/components/tax/taxController.js"><small>Algorithm</small></a>
+    </h1>
+    <hr/>
+    <br/>
+
+	<form class="form-horizontal">
+		<fieldset>
+			<!-- Income input-->
+			<div class="form-group">
+			  <label class="col-xs-4 control-label" for="income">Yearly Income in IDR</label>  
+			  <div class="col-xs-8">
+				  <input id="income" type="text" placeholder="Income" ng-model="income" class="form-control input-xs" ng-change="computeTaxes()" ui-money-mask="0">
+				<!-- <span class="help-block">help</span>--> 
+			  </div>
+			</div>
+
+			<br>
+
+			<div class="form-group" ng-repeat="tax in taxes">
+			  <label class="col-xs-4 control-label">Tax level #{{$index+1}}</label>  
+			  <div class="col-xs-8">
+				  <input type="text"
+				  ng-value="taxes[$index]|currency:'Rp ':0"
+				  class="form-control input-xs" ng-readonly="true">
+				  <span class="help-block" ng-bind="taxSystem[$index].info"></span>
+			  </div>
+			</div>
+
+			<h1 ng-if="income"> Total: {{totalTaxes|currency:'Rp ':0}} </h1>
+
+		</fieldset>
+	</form>
+</div>

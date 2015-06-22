@@ -1,0 +1,50 @@
+Personal notes
+
+how to run this project locally (Windows 8.1) :
+-----------------------------------------------
+git clone https://github.com/viellepeau/crud-symfony.git
+==> START WAMP
+composer install
+==> CONFIG MySQL
+php app/console server:run
+
+
+build from scratch :
+--------------------
+composer create-project symfony/framework-standard-edition my_project/
+cd my_project
+git init
+composer require doctrine/dbal:~2.4.4
+composer require voryx/restgeneratorbundle dev-master
+==> edit app/config/config.yml with https://github.com/voryx/restgeneratorbundle
+==> edit app/AppKernel.php with https://github.com/voryx/restgeneratorbundle
+composer update
+==> START WAMP
+php app/console doctrine:database:create
+php app/console doctrine:generate:entity --entity=AppBundle:Stock
+php app/console doctrine:schema:update --force
+php app/console voryx:generate:rest --entity="AppBundle:Stock"
+php app/console doctrine:schema:update --force
+php app/console server:run
+==> edit src/AppBundle/Controller/DefaultController.php with https://devcenter.heroku.com/articles/getting-started-with-symfony2
+==> edit app/Resources/views/index.html.twig as the home page
+==> include assets (css, js, img..) in web/
+
+
+test API with CURL (data model changed ==> to be updated):
+----------------------------------------------------------
+==> Create a record 
+curl -i -H "Content-Type: application/json" -X POST -d '{"name" : "Test stock", "notes" : "This is a test no tes", "quantity":"7", "lastOrderDate":{"date":{"year":2014,"month":11,"day":7},"time":{"hour":8,"minute":32}}} ' http://localhost:8000/api/stocks
+
+
+hide clear_db production database credentials with Heroku config vars to publish source on github :
+---------------------------------------------------------------------------------------------------
+When you add clear_db addon on Heroku (MySQL db), you get an url in this format: mysql://user:pass@us-cdbr-east.cleardb.com/TABLE
+https://coderwall.com/p/qpitzq/deploing-symfony-project-using-mysql-to-heroku
+
+
+concatenate all js files, annotate angularJS files to pass minification and Minify :
+------------------------------------------------------------------------------------
+cat *.js > all.js
+ng-annotate -a all.js -o all-anno.js
+minify all-anno.js

@@ -1,0 +1,57 @@
+﻿<div>
+    <h1>
+        CRUD a Symfony RESTful API with AngularJS
+        <a href="https://github.com/viellepeau/crud-symfony"><small>Source Code</small></a>
+        <!-- Total nb of items: itemsCtrl.gridController.allItems.length -->
+    </h1>
+    <br>
+    <div crud-grid
+         column-button-click='itemsCtrl.gridOnButtonClick'
+         initialized='itemsCtrl.gridOnInitialized'
+         server-url='{{itemsCtrl.serverUrl}}'
+         columns-definition='[
+         {
+            "binding"       :"id",
+            "type"          :"text",
+            "required"      :"true",
+            "hidden"        :"true"
+         },
+         {
+            "binding"       :"name",
+            "header"        :"Stock",
+            "type"          :"text",
+            "required"      :"true"
+         },
+         {
+            "binding"       :"qty",
+            "header"        :"Qty",
+            "type"          :"number",
+            "required"      :"true"
+         },
+         {
+            "binding"       :"importance",
+            "header"        :"Importance",
+            "type"          :"select",
+            "options"       :"Low, Medium, High",
+            "default"       :"Low",
+            "required"      :"true"
+         }
+
+         ]'>
+    </div>
+</div>
+
+         <!-- To be used later 
+         {
+             "type"         :"button",
+             "icon"         :"btn glyphicon glyphicon-plus",
+             "buttonid"     :"plus",
+             "class"        :"column-width-auto"
+         },
+         {
+             "type"         :"button",
+             "icon"         :"btn glyphicon glyphicon-minus",
+             "buttonid"     :"minus",
+             "class"        :"column-width-auto"
+         }
+         -->
