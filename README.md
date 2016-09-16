@@ -1,11 +1,5 @@
-# CRUD a Symfony RESTful API with AngularJS
-
-## Demo : [http://crud-symfony.herokuapp.com](http://crud-symfony.herokuapp.com)
-![Image CRUD UI](http://viellepeau.github.io/assets/img/crud-symfony/crud_ui.png)
-![Image TAX CALCULATOR UI](http://viellepeau.github.io/assets/img/crud-symfony/tax_ui.png)
-
-# How to run this project locally on Windows
-	git clone https://github.com/viellepeau/crud-symfony.git
+# How to run this app locally on Windows
+	git clone https://github.com/joelviel/crud-symfony.git
 	==> START WAMP
 	composer install
 	==> CONFIG MySQL
